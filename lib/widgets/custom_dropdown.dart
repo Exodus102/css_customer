@@ -5,6 +5,7 @@ class CustomDropdown extends StatelessWidget {
   final List<String> items;
   final String? selectedValue;
   final ValueChanged<String?> onChanged;
+  final bool hasError;
 
   const CustomDropdown({
     super.key,
@@ -12,6 +13,7 @@ class CustomDropdown extends StatelessWidget {
     required this.items,
     required this.selectedValue,
     required this.onChanged,
+    required this.hasError,
   });
 
   @override
@@ -25,21 +27,29 @@ class CustomDropdown extends StatelessWidget {
         isExpanded: true,
         decoration: InputDecoration(
           labelText: labelText,
+          labelStyle: TextStyle(
+            color: hasError ? Colors.red : Colors.black,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: hasError ? Colors.red : Colors.grey),
+          ),
           border: const OutlineInputBorder(),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color(0xFF064089),
+              color: hasError ? Colors.red : const Color(0xFF064089),
               width: 2,
             ),
           ),
-          floatingLabelStyle: const TextStyle(
-            color: Color(0xFF064089), // Active label text color
+          floatingLabelStyle: TextStyle(
+            color: hasError
+                ? Colors.red
+                : const Color(0xFF064089), // Active label text color
             fontWeight: FontWeight.bold, // Optional styling for active label
           ),
         ),
         value: selectedValue,
         items: items
-            .map((item) => DropdownMenuItem(
+            .map((item) => DropdownMenuItem<String>(
                   value: item,
                   child: Text(
                     item,

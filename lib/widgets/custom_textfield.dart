@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
+  final bool hasError;
 
   const CustomTextField({
     super.key,
     this.onChanged,
+    required this.hasError,
   });
 
   @override
@@ -23,8 +25,8 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(
-              color: Color(0xFF064089),
+            borderSide: BorderSide(
+              color: hasError ? Colors.red : const Color(0xFF064089),
               width: 2,
             ),
             borderRadius: BorderRadius.circular(8),

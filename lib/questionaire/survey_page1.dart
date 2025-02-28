@@ -92,22 +92,7 @@ class _SurveyPage1State extends State<SurveyPage1> {
           ),
           const SizedBox(height: 40),
           const CustomTextSurveyP1(text: "Name (Optional)"),
-          CustomTextField(
-            onChanged: (value) {
-              setState(() {
-                _name = value.isEmpty ? null : value;
-              });
-            },
-          ),
-          const SizedBox(height: 20),
-          const CustomTextSurveyP1(text: "Contact Number (Optional)"),
-          CustomTextField(
-            onChanged: (value) {
-              setState(() {
-                _contactNumber = value.isEmpty ? null : value;
-              });
-            },
-          ),
+          
           const SizedBox(height: 20),
           const CustomTextSurveyP1(text: "Customer Type"),
           Row(

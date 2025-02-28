@@ -1,6 +1,6 @@
 import 'package:css_website/header/title_survey.dart';
 import 'package:css_website/header/title_survey_logo.dart';
-import 'package:css_website/questionaire/questionaire.dart';
+import 'package:css_website/questionaire/questionnaire.dart';
 import 'package:flutter/material.dart';
 
 class HomeSurvey extends StatelessWidget {
@@ -11,43 +11,45 @@ class HomeSurvey extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        width: size.width * 1,
-        height: size.height * 1,
+        width: size.width,
+        height: size.height,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF07326A), Color(0xFF064089)],
+            colors: [Color(0xFF07326A), Color(0xFF063F87)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
         ),
         child: Padding(
           padding: EdgeInsets.all(size.width * 0.03),
-          child: const Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TitleSurvey(),
-                  TitleSurveyLogo(),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Questionaire(),
-              SizedBox(
-                height: 10,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "© University of Rizal System - Customer Satisfaction Survey System",
-                  style: TextStyle(
-                    color: Color(0xFFF1F7F9),
+          child: const SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TitleSurvey(),
+                    TitleSurveyLogo(),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Questionnaire(),
+                SizedBox(
+                  height: 10,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "© University of Rizal System - Customer Satisfaction Survey System",
+                    style: TextStyle(
+                      color: Color(0xFFF1F7F9),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -99,16 +99,6 @@ class _SurveyPage2State extends State<SurveyPage2> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          const CustomTextField(),
-          const SizedBox(height: 20),
-          const Text(
-            'Time',
-            style: TextStyle(
-              color: Color(0xFF1E1E1E),
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const CustomTextField(),
           const SizedBox(height: 20),
           const Text(
             'Purpose of Visit or Transaction',

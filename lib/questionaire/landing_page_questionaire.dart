@@ -54,7 +54,6 @@ class _LandingPageQuestionaireState extends State<LandingPageQuestionaire> {
         selectedOfficeUnit == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          backgroundColor: Color(0xFF0C5AC0),
           content: Text(
             'Please select all fields',
             style: TextStyle(
@@ -103,38 +102,6 @@ class _LandingPageQuestionaireState extends State<LandingPageQuestionaire> {
               ),
             ),
             const SizedBox(height: 40),
-            CustomDropdown(
-              labelText: 'Campus',
-              items: campus,
-              selectedValue: selectedCampus,
-              onChanged: (value) {
-                setState(() {
-                  selectedCampus = value;
-                });
-              },
-            ),
-            const SizedBox(height: 16),
-            CustomDropdown(
-              labelText: 'Division',
-              items: division,
-              selectedValue: selectedDivision,
-              onChanged: (value) {
-                setState(() {
-                  selectedDivision = value;
-                });
-              },
-            ),
-            const SizedBox(height: 16),
-            CustomDropdown(
-              labelText: 'Office/Unit',
-              items: officeunit,
-              selectedValue: selectedOfficeUnit,
-              onChanged: (value) {
-                setState(() {
-                  selectedOfficeUnit = value;
-                });
-              },
-            ),
             const SizedBox(height: 30),
             SizedBox(
               width: size.width * 0.35,

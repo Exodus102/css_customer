@@ -1,8 +1,10 @@
 import 'package:css_website/widgets/custom_buttons.dart';
 import 'package:flutter/material.dart';
 
-class SurveyPage7 extends StatelessWidget {
-  const SurveyPage7({super.key});
+class ClosingPage extends StatelessWidget {
+  final VoidCallback onSubmitAnotherResponse;
+
+  const ClosingPage({super.key, required this.onSubmitAnotherResponse});
 
   @override
   Widget build(BuildContext context) {
@@ -22,29 +24,23 @@ class SurveyPage7 extends StatelessWidget {
                 color: Color(0xFF1E1E1E),
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             const Text(
               "We appreciate your time and effort in sharing your thoughts with us. Your feedback is invaluable and will help us improve and serve you better.",
               style: TextStyle(),
             ),
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             const Text(
               "URSatisfaction. We comply so URSatisfy!",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
-              height: 45,
-            ),
+            const SizedBox(height: 45),
             Align(
               alignment: Alignment.bottomRight,
               child: CustomButtons(
-                onPressed: () {},
+                onPressed: onSubmitAnotherResponse,
                 label: "Submit Another Response",
               ),
             ),
